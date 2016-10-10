@@ -26,13 +26,13 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Name="label" Content="סכום ההלוואה" HorizontalContentAlignment="Right"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Name="txtLoanAmount" Margin="2"  Text="89382" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="txtLoanAmount" Margin="2"  Text="89382" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" TextChanged="txtLoanAmount_TextChanged"/>
         <Label Grid.Row="1" Grid.Column="0" Name="lblAPR" Content="ריבית שנתית"  HorizontalContentAlignment="Right"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Name="txtAPR" Margin="2" Text="1.3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" />
+        <TextBox Grid.Row="1" Grid.Column="1" Name="txtAPR" Margin="2" Text="1.3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" TextChanged="txtAPR_TextChanged" />
         <Label Grid.Row="2" Grid.Column="0" Name="lblMonths" Content="תקופת ההלוואה בחודשים" HorizontalContentAlignment="Right"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Name="txtMonths" Margin="2" Text="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="txtMonths" Margin="2" Text="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" TextChanged="txtMonths_TextChanged"/>
         <Label Grid.Row="3" Grid.Column="0" Name="lblFinalLumpSum" Content="תשלום סופי (במידה שיש)"  HorizontalContentAlignment="Right"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Name="txtFinalLumpSum" Margin="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"  />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="txtFinalLumpSum" Margin="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" TextChanged="txtFinalLumpSum_TextChanged"  />
         <Button Grid.Row="4" Grid.Column="1" Name="btnCompute" Content="חשב טבלת ההחזרים" Margin="4" Click="btnCompute_Click" Height="30"/>
         <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Name="lblResults"  BorderThickness="1" BorderBrush="Red"/>
         <!--<ListBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Name="lstResults" />-->

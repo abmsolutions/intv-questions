@@ -256,5 +256,24 @@ namespace cloancalculationapp
 
         }
 
+        private void txtLoanAmount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            doSomeFormValidation();
+        }
+
+        private void txtAPR_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            doSomeFormValidation();
+        }
+
+        private void txtMonths_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            doSomeFormValidation();
+        }
+
+        private void txtFinalLumpSum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            doSomeFormValidation();
+        }
     }
 }
