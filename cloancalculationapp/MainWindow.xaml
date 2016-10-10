@@ -1,0 +1,79 @@
+﻿<Window Name="myMainAppWindow" x:Class="cloancalculationapp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cloancalculationapp"
+        mc:Ignorable="d"    
+        FlowDirection="RightToLeft" 
+    Localization.Comments="FlowDirection(This FlowDirection controls the actual content of the window)"
+    xml:lang="en-US"
+     Title="מחשבון הלוואה - עמ" Height="550" Width="525" WindowStartupLocation="CenterScreen">
+
+    <Grid Name="myMainGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Name="label" Content="סכום ההלוואה" HorizontalContentAlignment="Right"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="txtLoanAmount" Margin="2"  Text="89382" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+        <Label Grid.Row="1" Grid.Column="0" Name="lblAPR" Content="ריבית שנתית"  HorizontalContentAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="txtAPR" Margin="2" Text="1.3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" />
+        <Label Grid.Row="2" Grid.Column="0" Name="lblMonths" Content="תקופת ההלוואה בחודשים" HorizontalContentAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="txtMonths" Margin="2" Text="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"/>
+        <Label Grid.Row="3" Grid.Column="0" Name="lblFinalLumpSum" Content="תשלום סופי (במידה שיש)"  HorizontalContentAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="txtFinalLumpSum" Margin="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight"  />
+        <Button Grid.Row="4" Grid.Column="1" Name="btnCompute" Content="חשב טבלת ההחזרים" Margin="4" Click="btnCompute_Click" Height="30"/>
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Name="lblResults"  BorderThickness="1" BorderBrush="Red"/>
+        <!--<ListBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Name="lstResults" />-->
+        <ListView Grid.Row="6" Grid.ColumnSpan="2" Name="lvProfile">
+            <ListView.View>
+                <GridView ColumnHeaderToolTip="Loan Payments Profile">
+                    <GridViewColumn Width="75" DisplayMemberBinding="{Binding Month}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="חודש מס'" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="75" DisplayMemberBinding="{Binding Interest}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="תש' הריבית" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="75" DisplayMemberBinding="{Binding Principle}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="תש' הקרן" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="75" DisplayMemberBinding="{Binding Payment}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="סך התשלום" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Remaining}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="יתרת הקרן" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Paid}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="שולם עד כה" HorizontalContentAlignment="Left"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>
+ 
